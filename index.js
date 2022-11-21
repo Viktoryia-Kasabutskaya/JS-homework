@@ -3,12 +3,12 @@
 
 
 const sayHello = function(name) {
-    if (name === 'Mark' || name === 'mark') {
-        return ( `Hi, ${name}` );
+    if (name.toLowerCase() === 'mark') {
+        return `Hi, ${name}!`;
     }
 
-    return ( `Hello, ${name}` );
+    return `Hello, ${name}!`;
 }
 
-console.log(sayHello('Mark'))
+console.log(sayHello('MARK'))
 console.log(sayHello('Alex'))
