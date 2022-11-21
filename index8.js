@@ -2,7 +2,7 @@
 
 
 const concatenateFunction = function (firstString, secondString) {
-    return (`${firstString} ${secondString}`);
+    return `${firstString} ${secondString}`;
 
 }
 

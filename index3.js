@@ -6,7 +6,7 @@ const minvalue = function (a, b) {
     return Math.min(a, b);
 }
 
-console.log(minvalue(5, 67))
+console.log(minvalue(5, 10))
 
 
 // вариант 2
@@ -14,8 +14,12 @@ const minvalue2 = function (a, b) {
     if (a < b) {
         return a
     }
+
+    if (a === b) {
+        return a, b
+    }
     
     return b
 }
 
-console.log(minvalue2(25, 7))
+console.log(minvalue2(76, 2))

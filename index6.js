@@ -3,15 +3,28 @@
 // в нижнем регистре. Если в слове четное количество букв, то и последняя буква должна быть заглавной.
 
 
-const capitalized = function (stringValue) {
-    const firstCapitalLetter = stringValue[0].toUpperCase();
-    const restchars = stringValue.slice(1).toLowerCase();
+// const capitalized = function (stringValue) {
+//     const firstCapitalLetter = stringValue[0].toUpperCase();
+//     const restChars = stringValue.slice(1).toLowerCase();
 
+//     if (stringValue.length % 2 === 0) {
+//         const lastCapitalLetter = stringValue[stringValue.length - 1].toUpperCase()
+//         return firstCapitalLetter + restChars + lastCapitalLetter
+//     }
+
+//     return firstCapitalLetter + restChars;
+// }
+
+const capitalized = function (stringValue) {
     if (stringValue.length % 2 === 0) {
-        const lastCapitalLetter = stringValue[stringValue.length - 1].toUpperCase()
-        return firstCapitalLetter + restchars + lastCapitalLetter
+        return stringValue[0].toUpperCase() + 
+               stringValue.slice(1, stringValue.length - 1).toLowerCase() + 
+               stringValue[stringValue.length - 1].toUpperCase();
     }
 
-    return firstCapitalLetter + restchars;
+    return stringValue[0].toUpperCase() + stringValue.slice(1).toLowerCase();
 }
-console.log(capitalized('hjgfjdhgx'))
+
+
+console.log(capitalized('name'))
+console.log(capitalized('sun'))

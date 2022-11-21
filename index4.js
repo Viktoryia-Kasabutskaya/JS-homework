@@ -2,11 +2,8 @@
 // возвращать два значения: четное или нечетное.
 
 const isEven = function (number) {
-    if (number % 2 === 0) {
-        return true;;
-    }
-    
-    return false
+    return number % 2 === 0
 }
 
-console.log(isEven(38))
+console.log(isEven(37))
+console.log(isEven(2))

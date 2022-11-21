@@ -3,11 +3,12 @@
 
 
 const sayHello = function(name) {
-    if (name === 'Mark') {
+    if (name === 'Mark' || name === 'mark') {
         return ( `Hi, ${name}` );
     }
 
     return ( `Hello, ${name}` );
 }
 
+console.log(sayHello('Mark'))
 console.log(sayHello('Alex'))
