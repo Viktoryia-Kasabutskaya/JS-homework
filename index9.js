@@ -3,11 +3,8 @@
 
 
 
-const checkStringLength = function (a, b) {
-    if (a.length > b) {
-        return 'String is too long!'
-    } 
-    return a
+const checkStringLength = function (stringValue, availableLength) {
+    return stringValue.length > availableLength ? 'String is too long!' : stringValue
 }
 
-console.log(checkStringLength('hello', 3))
+console.log(checkStringLength('hello', 7))

@@ -3,26 +3,19 @@
 // в нижнем регистре. Если в слове четное количество букв, то и последняя буква должна быть заглавной.
 
 
-// const capitalized = function (stringValue) {
-//     const firstCapitalLetter = stringValue[0].toUpperCase();
-//     const restChars = stringValue.slice(1).toLowerCase();
+const capitalized = function (word) {
+    const firstCapitalLetter = word[0].toUpperCase();
+    const isCharsAmountEven = word.length % 2 === 0;
+    
 
-//     if (stringValue.length % 2 === 0) {
-//         const lastCapitalLetter = stringValue[stringValue.length - 1].toUpperCase()
-//         return firstCapitalLetter + restChars + lastCapitalLetter
-//     }
+    if (isCharsAmountEven) {
+        const restWord = word.slice(1, -1).toLowerCase();
+        const lastCapitalLetter = word[word.length - 1].toUpperCase();
 
-//     return firstCapitalLetter + restChars;
-// }
-
-const capitalized = function (stringValue) {
-    if (stringValue.length % 2 === 0) {
-        return stringValue[0].toUpperCase() + 
-               stringValue.slice(1, stringValue.length - 1).toLowerCase() + 
-               stringValue[stringValue.length - 1].toUpperCase();
+        return `${firstCapitalLetter}${restWord}${lastCapitalLetter}`
     }
 
-    return stringValue[0].toUpperCase() + stringValue.slice(1).toLowerCase();
+    return `${firstCapitalLetter}${word.slice(1).toLowerCase()}`;
 }
 
 

@@ -3,11 +3,11 @@
 
 
 const sayHello = function(name) {
-    if (name.toLowerCase() === 'mark') {
-        return `Hi, ${name}!`;
-    }
+    const SPECIAL_NAME = 'mark';
+    const isMark = name.toLowerCase() === SPECIAL_NAME;
+    const greeting = isMark ? 'Hi' : 'Hello'
 
-    return `Hello, ${name}!`;
+    return `${greeting}, ${name}!`
 }
 
 console.log(sayHello('MARK'))
