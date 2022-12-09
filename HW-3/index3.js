@@ -17,8 +17,8 @@ const users = [
   },
 ];
 
-const removeUsers = (users, index) => {
-  return users.filter(({ id }) => !index.includes(id));
+const filterUsers = (users, blackListeds) => {
+  return users.filter(({ id }) => !blackListeds.includes(id));
 };
 
-console.log(removeUsers(users, [3]));
+console.log(filterUsers(users, [2, 3]));

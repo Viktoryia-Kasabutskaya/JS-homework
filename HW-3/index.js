@@ -4,12 +4,7 @@
 const arrayOfNumbers = (numbers) => {
   if (!Array.isArray(numbers)) return;
 
-  return numbers.map((number) => {
-    if (number % 2 === 0) {
-      return number + 1;
-    }
-    return number - 1;
-  });
+  return numbers.map((number) => (number % 2 === 0 ? number + 1 : number - 1));
 };
 
 console.log(arrayOfNumbers([1, 2, 3, 4, 5]));

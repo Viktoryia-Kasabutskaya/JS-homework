@@ -22,10 +22,39 @@ const usersArray = [
   },
   {
     id: 3,
-    first_name: "Petr",
+    first_name: "Anna",
+    last_name: "Maria",
+    email: "fox@senate.gov",
+    gender: "Female",
+    ip_address: "26.179.2.22",
+  },
+  {
+    id: 4,
+    first_name: "Max",
     last_name: "Jackson",
-    email: "gfrediani1@senate.gov",
+    email: "htrhr@senate.gov",
     gender: "Male",
-    ip_address: "229.179.4.212",
+    ip_address: "229.34.4.21",
   },
 ];
+
+const splitByGender = (users) => {
+  const WOMEN = "Female";
+
+  return users.reduce(
+    (gendersCollection, { first_name, last_name, ...otherInfo }) => {
+      const isWomen = otherInfo.gender === WOMEN;
+      const gender = isWomen ? "women" : "men";
+
+      const userToPush = {
+        fullName: `${first_name} ${last_name}`,
+        ...otherInfo,
+      };
+      gendersCollection[gender].push(userToPush);
+      return gendersCollection;
+    },
+    { men: [], women: [] }
+  );
+};
+
+console.log(splitByGender(usersArray));

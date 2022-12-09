@@ -3,11 +3,8 @@
 
 const isPalindrom = (str) => {
   const word = str.toLowerCase();
-  if (word === word.split("").reverse().join("")) {
-    return true;
-  }
-  return false;
+  return word === word.split("").reverse().join("");
 };
 
-console.log(isPalindrom("Анна"));
+console.log(isPalindrom("АнНа"));
 console.log(isPalindrom("кот"));
