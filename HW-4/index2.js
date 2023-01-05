@@ -22,15 +22,16 @@ const boxarts = [
   },
 ];
 
-const findMaxSquare = (boxarts) => {
-  const findSquare = boxarts.map(({ width, height, ...otherElement }) => {
-    return {
-      square: width * height,
-      ...otherElement,
-    };
-  });
-  console.log(findSquare);
+const findMaxSquareUrl = (boxarts) => {
+  return boxarts.reduce((currentBoxart, nextBoxart, index) => {
+    const { width, height } = currentBoxart;
+    const { width: nextBoxartWidth, height: nextBoxartHeight } = nextBoxart;
+
+    const currentSquare = width * height;
+    const nextSquare = nextBoxartWidth * nextBoxartHeight;
+
+    return currentSquare > nextSquare ? currentBoxart : nextBoxart;
+  }).url;
 };
 
-
-console.log(findMaxSquare(boxarts));
+console.log(findMaxSquareUrl(boxarts));
