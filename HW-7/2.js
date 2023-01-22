@@ -12,19 +12,20 @@ const getUsersPosts = async () => {
       ),
     ]);
 
-    const postsId = posts.reduce((result, { userId, title }) => {
-      if (!result[userId]) {
-        result[userId] = [];
+    const UserIdPostsMap = new Map();
+
+    posts.forEach((post) => {
+      if (!UserIdPostsMap.has(post.userId)) {
+        UserIdPostsMap.set(post.userId, []);
       }
 
-      result[userId].push(title);
-      return result;
+      UserIdPostsMap.get(post.userId).push(post);
     }, {});
 
     const usersPosts = users.map((user) => {
       return {
         ...user,
-        myPosts: postsId[user.id],
+        myPosts: UserIdPostsMap.get(user.id),
       };
     });
 

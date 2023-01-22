@@ -1,10 +1,15 @@
 // Написать метод, который повторяет логику Object.fromEntries().
 
-let myEntries = [
-  ["fruit", "apple"],
-  ["drink", "coffee"],
-];
-const obj = {};
-myEntries.forEach((a) => (obj[a[0]] = a[1]));
+const customFromEntries = (arrayEntries) => {
+  return arrayEntries.reduce((result, [key, value]) => {
+    result[key] = value;
+    return result;
+  }, {});
+};
 
-console.log(obj);
+console.log(
+  customFromEntries([
+    ["a", 1],
+    ["b", 2],
+  ])
+);
